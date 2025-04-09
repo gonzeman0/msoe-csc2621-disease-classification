@@ -6,6 +6,10 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G
 
+# Email settings
+#SBATCH --mail-type=END,FAIL                # Send email on job completion or failure
+#SBATCH --mail-user=your.email@example.com  # Replace with your email
+
 # Always run from the directory the job was submitted in
 cd "$SLURM_SUBMIT_DIR"
 
