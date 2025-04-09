@@ -1,3 +1,16 @@
+# SLURM log files
+*.out
+*.err
+slurm-*.out
+slurm-*.err
+
+# SLURM job scripts (if they're auto-generated or not meant to be versioned)
+*.slurm
+
+# Log directory
+logs/
+
+
 # Kaggle API key
 kaggle.json
 .kaggle/
