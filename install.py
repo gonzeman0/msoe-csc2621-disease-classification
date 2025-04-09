@@ -6,12 +6,13 @@
     For API key see: https://www.kaggle.com/docs/api#authentication
 """
 
+import os
 import kagglehub
 
-# Change this to set path
-PATH = "~/datasets"
+# Expand ~ to full home path
+PATH = os.path.expanduser("~/datasets")
 
-# Download latest version
+# Download dataset to the expanded path
 path = kagglehub.dataset_download("nih-chest-xrays/data", path=PATH)
 
 print("Path to dataset files:", path)
