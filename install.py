@@ -7,12 +7,22 @@
 """
 
 import os
-import kagglehub
+from kaggle.api.kaggle_api_extended import KaggleApi
+from pathlib import Path
 
-# Expand ~ to full home path
-PATH = os.path.expanduser("~/datasets")
+# Set the dataset slug (from Kaggle URL)
+DATASET = "nih-chest-xrays/data"  # Replace with any other slug if needed
 
-# Download dataset to the expanded path
-path = kagglehub.dataset_download("nih-chest-xrays/data", path=PATH)
+# Set your download path (e.g., ~/datasets)
+DOWNLOAD_PATH = Path("~/datasets").expanduser()
+DOWNLOAD_PATH.mkdir(parents=True, exist_ok=True)  # Create it if it doesn't exist
 
-print("Path to dataset files:", path)
+# Initialize and authenticate
+api = KaggleApi()
+api.authenticate()
+
+# Download and unzip dataset
+api.dataset_download_files(dataset=DATASET, path=str(DOWNLOAD_PATH), unzip=True)
+
+print(f"Dataset downloaded to: {DOWNLOAD_PATH}")
+
