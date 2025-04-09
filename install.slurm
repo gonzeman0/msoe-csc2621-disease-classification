@@ -20,4 +20,4 @@ source venv/bin/activate
 mkdir -p logs
 
 # Run your dataset download script
-python src/install.py
+python install.py
