@@ -2,7 +2,7 @@
 #SBATCH --job-name=kaggle-dl
 #SBATCH --output=logs/install_dataset_%j.out
 #SBATCH --error=logs/install_dataset_%j.err
-#SBATCH --time=72:00:00
+#SBATCH --time=1-00:00:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G
 
@@ -20,4 +20,4 @@ source venv/bin/activate
 mkdir -p logs
 
 # Run your dataset download script
-python src/download_data.py
+python src/install.py
