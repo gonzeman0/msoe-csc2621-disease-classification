@@ -18,6 +18,7 @@ DOWNLOAD_PATH = Path("~/datasets").expanduser()
 DOWNLOAD_PATH.mkdir(parents=True, exist_ok=True)  # Create it if it doesn't exist
 
 # Initialize and authenticate
+os.environ['KAGGLE_CONFIG_DIR'] = str(Path(".kaggle").resolve())
 api = KaggleApi()
 api.authenticate()
 
