@@ -4,7 +4,7 @@
 #SBATCH --error=logs/install_dataset_%j.err
 #SBATCH --time=1-00:00:00
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=4G
+#SBATCH --mem=16G
 
 # Email settings
 #SBATCH --mail-type=END,FAIL                # Send email on job completion or failure
